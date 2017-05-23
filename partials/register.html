@@ -1,0 +1,69 @@
+
+<div class="span12">
+    <div class="hero-unit">
+    <h1>REGISTRERING</h1>
+    <p>Her kan du registrere deg en bruker ved &aring; fylle ut feltene nedenfor</p>
+    <button class="btn" ng-click="backToShop()">Tilbake til butikken</button>
+    </div>
+</div>
+
+<div id="registerform" class="span4 offset2">
+
+    <div class="login-forms">
+        <form class="form-horizontal" ng-submit="registerSubmit()">
+
+
+
+
+            <div class="control-group">
+                <label class="control-label" for="company">Bedrift:</label>
+                <div class="controls">
+                    <input ng-model="company" name="company" id="company" type="text" placeholder="Bedrift" />
+                </div>
+
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="username">Brukernavn:</label>
+                <div class="controls">
+                    <input ng-model="username" name="username" id="username" type="text" placeholder="Brukernavn" />
+                </div>
+
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="password">Passord:</label>
+                <div class="controls">
+                    <input ng-model="password" type="password" id="password" name="password" placeholder="Passord" />
+                </div>
+
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="admin"
+                     ng-true-value="1" ng-false-value="0" /> Administrator
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <button id="loginbtn" class="btn btn-success" type="submit" name="submit">Registrer</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+            <div class="alert-success" id="response"></div>
+            </div>
+        </form>
+        <br />
+        
+        
+    </div> <!-- login-forms -->
+
+
+
+</div>

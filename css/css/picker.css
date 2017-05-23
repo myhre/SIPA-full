@@ -1,0 +1,15 @@
+#picker{ 
+    width: 200px; 
+    height: 200px 
+}
+            
+#slide{ 
+    width: 30px; 
+    height: 200px 
+}
+
+#colorpreview{
+    width: 40px;
+    height: 20px;
+    background-color: #dcdcdc;
+}

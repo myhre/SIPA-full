@@ -1,0 +1,56 @@
+<div class="container">
+
+    <div class="row margin1">
+
+        <div class="side-menu pull-left">
+            <ul class="nav nav-pills nav-stacked margin2">
+                <li class="sideoppsett">Sideoppsett</li>
+                <li><a href="#/structure">Struktur<i class="icon-th pull-right"></i></a></li>
+                <li><a href="#/content">Innhold<i class="icon-pencil pull-right"></i></a></li>
+                <li><a href="#/style">Stil<i class="icon-tint pull-right"></i></a></li>
+                <li class="active"><a href="#/modprod">Moduler<i class="icon-wrench pull-right"></i></a></li>
+                <li><a href="#/addprod">Produkter<i class="icon-list-alt pull-right"></i></a></li>
+            </ul>
+        </div> <!-- side-menu -->
+
+        <div class="right-menu">
+            <button id="update-btn" ng-click="submitProdOpt()" class="btn btn-success">Lagre endringer</button>	
+            <button id="preview-btn" class="btn btn">Forhåndsvis</button>		
+        </div> <!-- right-menu -->
+
+        <div class="span7 systemprefs">
+
+            <form>
+
+
+                <h3 class="pref-list">Velg listetype:</h3>
+
+                <div class="pref-boxes-list">
+                    <ul id="list-sprites">
+                        <li ng-click="listChoice('list1')" id="list1"></li>
+                        <li ng-click="listChoice('list2')" id="list2"></li>
+                        <li ng-click="listChoice('list3')" id="list3"></li>
+                        <li ng-click="listChoice('list4')" id="list4"></li>
+                    </ul>
+
+
+
+                </div> <!-- pref-boxes -->
+
+                <div class="alert alert-success" id="clickresult">  
+
+                </div>
+
+                <h3 class="pref-text">Velg handlekurv:</h3>
+
+                <select class="page-dropdown" ng-model="carttype" id="carttype" name="carttype" placeholder="Velg">
+                    <option ng-repeat="cart in carts" value="{{cart}}">{{cart}}</option>
+                </select>
+
+            </form>
+            <div><p id="result" class="text-success"></p></div>
+        </div> <!-- pref-boxes -->
+
+    </div> <!-- row -->		
+
+</div> <!-- container -->

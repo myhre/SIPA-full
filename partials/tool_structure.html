@@ -1,0 +1,59 @@
+<div class="container">
+
+    <div class="row margin1">
+
+        <div class="side-menu pull-left">
+            <ul class="nav nav-pills nav-stacked margin2">
+                <li class="sideoppsett">Sideoppsett</li>
+                <li class="active"><a href="#/structure">Struktur<i class="icon-th pull-right"></i></a></li>
+                <li><a href="#/content">Innhold<i class="icon-pencil pull-right"></i></a></li>
+                <li><a href="#/style">Stil<i class="icon-tint pull-right"></i></a></li>
+                <li><a href="#/modprod">Moduler<i class="icon-wrench pull-right"></i></a></li>
+                <li><a href="#/addprod">Produkter<i class="icon-list-alt pull-right"></i></a></li>
+            </ul>
+        </div> <!-- side-menu -->
+        
+        <form ng-upload action="../restserver/upload.php"> <!-- Form start -->
+            
+            <div class="right-menu">
+
+                <button id="update-btn" upload-submit="structureSubmit(contents, completed)" class="btn btn-success">Lagre endringer</button>	
+                <button id="preview-btn" class="btn btn">Forhåndsvis</button>		
+            </div> <!-- right-menu -->
+
+            <div class="span7 systemprefs">		
+
+                <h3>Last opp coverbilde: </h3>
+
+
+                <input id="file" type="file" name="file" />
+
+
+        </form> <!-- Form stop -->
+
+
+        <h3 class="pref-text">Sidestruktur</h3>
+
+        <div class="pref-boxes">
+
+            <ul id="cover-photo-sprites">
+                <li ng-click="structChoice('coverphoto-column1')" id="cover-photo"></li>
+                <li ng-click="structChoice('coverphoto-column2')" id="cover-photo-text"></li>
+                <li ng-click="structChoice('coverphoto-none')" id="cover-photo-none"></li>
+            </ul>
+
+            <div ng-show="showcontent">
+                <h3 class="pref-text">Overskrift:</h3>
+
+                <input class="title-form2" ng-model="headline" name="headline" id="headline" type="text" />
+
+
+                <h3 class="pref-text2">Innhold</h3>
+                <textarea class="textarea-content" ng-model="content" placeholder="Skriv innhold her" rows="10"></textarea>
+            </div>
+            <div class="text-success" id="response"></div>
+
+        </div> <!-- pref-boxes -->
+
+    </div> <!-- row -->		
+</div> <!-- container -->

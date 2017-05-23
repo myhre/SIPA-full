@@ -1,0 +1,62 @@
+<div ng-style="background" class="container">
+
+    <div class="row margin1">
+
+        <div class="side-menu pull-left">
+            <ul class="nav nav-pills nav-stacked margin2">
+                <li class="sideoppsett">Sideoppsett</li>
+                <li><a href="#/structure">Struktur<i class="icon-th pull-right"></i></a></li>
+                <li><a href="#/content">Innhold<i class="icon-pencil pull-right"></i></a></li>
+                <li class="active"><a href="#/style">Stil<i class="icon-tint pull-right"></i></a></li>
+                <li><a href="#/modprod">Moduler<i class="icon-wrench pull-right"></i></a></li>
+                <li><a href="#/addprod">Produkter<i class="icon-list-alt pull-right"></i></a></li>
+            </ul>
+        </div> <!-- side-menu -->
+
+        <div class="right-menu">
+            <button id="update-btn" ng-click="saveStyle()" class="btn btn-success">Lagre endringer</button>	
+            <button id="preview-btn" class="btn btn">Forhåndsvis</button>		
+        </div> <!-- right-menu -->
+
+        <div class="span7 systemprefs">
+            
+            <h3 class="pref-text2">Farger</h3>
+            <div id="color-picker" class="cp-default"></div>
+            
+            <div>
+                <div class="io">
+                <label>HEX:</label>
+                <input id="hex" type="text" value="" />
+                </div>
+                
+                <label>Farge: </label><div id="colorpreview"></div>
+            </div>
+           
+            
+            <h3 class="pref-text">Fontstørrelse</h3>
+            
+            <div class="pref-boxes-text">
+            <ul id="font-sprites">
+            	<li ng-click="fontSize(0.9)" id="font-small"></li>
+            	<li ng-click="fontSize(1.3)" id="font-medium"></li>
+            	<li ng-click="fontSize(1.7)" id="font-large"></li>
+            </ul>
+            </div> <!-- pref-boxes -->
+
+            <h3 class="pref-text">Skrifttype</h3>
+
+            <select ng-model="font" id="font-family">
+                <option>Arial</option>
+                <option>Verdana</option>
+                <option>Times New Roman</option>
+                <option>Georgia</option>
+            </select>
+
+            <div class="clearfix"></div>
+
+            <div class="text-sucess" id="responsedata">
+                {{response}}
+            </div>
+            
+        </div> <!-- row -->		
+    </div> <!-- container -->

@@ -1,0 +1,35 @@
+<div class="container">
+
+		<div class="row margin1">
+			
+			<div class="side-menu pull-left">
+				<ul class="nav nav-pills nav-stacked margin2">
+					<li class="sideoppsett">Sideoppsett</li>
+					<li><a href="#/structure">Struktur<i class="icon-th pull-right"></i></a></li>
+					<li class="active"><a href="#/content">Innhold<i class="icon-pencil pull-right"></i></a></li>
+					<li><a href="#/style">Stil<i class="icon-tint pull-right"></i></a></li>
+					<li><a href="#/modprod">Moduler<i class="icon-wrench pull-right"></i></a></li>
+					<li><a href="#/addprod">Produkter<i class="icon-list-alt pull-right"></i></a></li>
+				</ul>
+			</div> <!-- side-menu -->
+			
+			<div class="right-menu">
+				<button id="update-btn" ng-click="contentSubmit()" class="btn btn-success">Lagre endringer</button>	
+				<button id="preview-btn" class="btn btn">Forhåndsvis</button>		
+			</div> <!-- right-menu -->
+			
+			<div class="span7 systemprefs">
+                            
+                            <h3 class="pref-text">Overskrift:</h3>
+
+                            <input class="title-form2" ng-model="headline" name="headline" id="headline" type="text" />
+
+
+                            <h3 class="pref-text2">Innhold</h3>
+                            <textarea class="textarea-content" ng-model="content" placeholder="Skriv innhold her" rows="10"></textarea>
+                                
+                                <div id="response"></div>
+	
+</div> <!-- row -->		
+
+</div> <!-- container -->

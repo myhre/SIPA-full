@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="myapp">
+    <head>
+        <title>TITTEL</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <link rel="stylesheet" href="css/css/bootstrap.css" />
+        <link rel="stylesheet" href="css/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="lib/FlexiColorPicker-master/themes.css" />
+
+        
+        <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="lib/angular.min.js"></script>    
+        
+        <script type="text/javascript" src="lib/ngUpload/ng-upload.js"></script>
+        <script type="text/javascript" src="lib/FlexiColorPicker-master/colorpicker.js"></script>
+        
+    </head>
+    
+    <body style="{{style}}">
+        <div ng-show="permission" ng-controller="NavController" class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">{{bedrift}}</a>
+                <ul class="nav">
+                    <li><a href="#/login">Login</a></li>
+                    <li><a href="#/store">Butikk</a></li>
+                    <li><a href="#/structure">Verktøypanel</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div ng-view>
+
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/myApp.js"></script>
+        <script type="text/javascript" src="js/navbar.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/register.js"></script>
+        <script type="text/javascript" src="js/structure.js"></script>
+        <script type="text/javascript" src="js/content.js"></script>
+        <script type="text/javascript" src="js/addprod.js"></script>
+        <script type="text/javascript" src="js/productlist.js"></script>
+        <script type="text/javascript" src="js/shopcart.js"></script>
+        <script type="text/javascript" src="js/modprod.js"></script>
+        <script type="text/javascript" src="js/styletool.js"></script>
+    </body>
+</html>

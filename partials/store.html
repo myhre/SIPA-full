@@ -1,0 +1,147 @@
+<!-- NETTSTEDET BEGYNNER -->
+<div class="{{cartmodel}}"> <!-- shoppingcart-right-side, av på default -->
+    <div class="container-webshop">
+        
+        <div ng-controller="shopcartcontroller"> <!-- Shoppingcart -->
+            
+            <div class="row">
+
+                <!-- HEADER -->                
+                <a href="#"><img class="span2 pull-left" id="main-logo" src="images/logo.png" width="150px" alt="logo" /></a> 
+
+                <div class="{{cart}}"> <!-- shoppingcart1: produktliste ikke synlig, shoppingcart2: produktliste synlig -->
+
+                    <div class="pull-right user-info"><i class="icon-user"></i> <a href="#/register">Registrer</i><i class="icon-lock lock-margin"></i></a> <a href="#/login">Logg inn</a></div><br /><hr />
+
+                    <div class="shopping-info2">
+
+                        <p><strong><i class="icon-shopping-cart"></i> Handlekurv ({{itemcount}}) NOK {{total}}</strong>
+                            <br />
+                        <ul>
+                            <li ng-repeat="item in items">{{item.itemname}}<span class="shoppingcart-side-price">{{item.itemprice}},&ndash;</span></li> 
+
+                            <li><span id="shoppingcart-side-total-price">Totalt: {{total}},&ndash;</span></li>
+                        </ul>
+                        </p>
+
+                    </div> <!-- shopping-info2 -->
+
+                    <div class="pull-right shopping-info"><i class="icon-shopping-cart"></i> <a href="#">Handlevogn ({{itemcount}})</a><span id="price-tag"></span>NOK {{total}}</div>
+
+                    <!-- MENYLINJE -->            
+
+                    <div class="span12">
+
+                        <div class="pull-right user-info2 navbar-inner"><i class="icon-user"></i> <a href="#">Registrer</i><i class="icon-lock lock-margin"></i></a> <a href="#">Logg inn</a><li class="li-margintop pull-right"><input type="text" class="span2 search-query" placeholder="Søk produkter" />
+                                <button class="btn btn-margin">Søk</button></li></div>
+
+                        <div class="span2 pull-left"></div>
+
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <ul class="nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Home</a></li>
+                                </ul>
+                                <ul class="ul-nostyle">
+                                    <li class="li-margintop pull-right"><input class="searchbar-shoppingcart1" type="text" class="span2 search-query" placeholder="Søk produkter" />
+                                        <button class="btn btn-margin btn-shoppingcart1">Søk</button></li>
+                                </ul>
+                            </div> <!-- navbar-inner -->
+                        </div> <!-- navbar -->
+
+                    </div> <!-- shoppingcart -->
+
+                </div> <!-- span12 -->
+            </div> <!-- row -->
+
+            <!-- BREADCRUMB -->        
+            <div class="breadcrumb-nav"> <!-- breadcrumb-nav: synlig, breadcrumb-nav-none: ikke synlig -->    
+                <div class="row">
+                    <div class="span12">
+                        <ul class="breadcrumb">
+                            <li><i class="icon-home"></i> /</span></li>
+                            <li class="active"> Velkommen til Secrui!<span class="divider"></span></li>
+                        </ul>
+                    </div> <!-- span12 -->
+                </div> <!-- row -->
+            </div> <!-- breadcrumb-nav -->
+
+                
+                <!-- COVER-BILDE -->
+
+            <div class="{{structure}}"> <!-- coverphoto-column1: ett bilde som dekker hele raden. coverphoto-column2: et bilde og tekst, som dekker 50/50. -->
+                <div class="coverphoto1"> 
+                    <div class="row">
+                        <div class="span12">
+                            <img class="thumbnail" src="{{coverphoto}}" width="930px" alt="wallpaper" /> <br /> <br />
+                        </div> <!-- row -->
+                    </div> <!-- span12 -->	
+                </div> <!-- coverphoto -->
+                
+                
+
+                <div class="coverphoto2"> <!-- coverphoto: synlig, coverphoto-none: ikke synlig -->
+                    <div class="row">
+                        <div class="span12">
+                            <img class="thumbnail" src="{{coverphoto}}" width="450px" alt="wallpaper" /><h3>{{headline}}</h3><p>{{content}}</p>
+                            <br /> <br />
+                        </div> <!-- row -->
+                    </div> <!-- span12 -->	
+                </div> <!-- coverphoto2 --> 
+            </div> <!-- coverphoto-column -->    
+
+            <!-- PRODUKTLISTE -->
+
+            <div class="shopping-info3"> <!-- handlekurv ved siden av produktliste -->
+
+                <p><strong><i class="icon-shopping-cart"></i> Handlekurv ({{itemcount}}) NOK {{total}}</strong>
+                    <br />
+                <ul>
+                    <li ng-repeat="item in items">{{item.itemname}}<span class="shoppingcart-side-price">{{item.itemprice}},&ndash;</span></li>  
+                    <li><span id="shoppingcart-side-total-price">Totalt: {{total}},&ndash;</span></li>
+                </ul>
+                <button class="btn btn-success" id="go-to-shoppingcart-side">Gå til handlekurv</button>
+                </p>
+
+            </div> <!-- shopping-info3 -->
+        </div> <!-- Shoppingcart -->
+
+        <div ng-controller="productlistcontroller" class="{{listtype}}"> <!-- list1: fire (tre) kolonner, list2: listevisning, list3: tre (to) kolonner, list4: fem (fire) kolonner, list5: første produkt stort, resterende i miniatyr
+            -->
+            <div class="row">
+                <div class="span12">
+
+                    <ul class="thumbnails">
+                        <li ng-repeat="product in products" class="span3" id="first-child-toggle">
+                            <div class="thumbnail">
+
+                                <a href="#" onclick="toggle_visibility('product-info');"><img src="{{product.picture}}"  alt="" /></a>
+
+                                <div class="product-info-toggle">
+                                    <h3>{{product.name}}</h3><p>{{product.description}}</p> <button ng-click="toCart(product.name, product.price)" class="btn btn-buy btn-toggle">Legg til handlevogn</button>
+                                    <p class="price-toggle">{{product.price}},&ndash;</p><p class="clearfix-toggle">This is a hidden clearfix.</p>   
+                                </div> <!-- product-info-toggle -->                                                   
+
+                                <h4 class="product-name">{{product.name}}</h4>
+                                <p class="price">{{product.price}},&ndash;</p>
+
+                                <div id="product-info" class="span11"><img src="{{product.picture}}" width="500px" alt="" /><h3>{{product.name}}</h3><p>{{product.description}}</p>
+
+                                    <button ng-click="toCart(product.name, product.price)" class="btn btn-buy">Legg til handlevogn</button>														  
+                                    <span class="clearfix"></span>
+                                </div> <!-- product-info -->
+                            </div> <!-- thumbnail -->
+                        </li>
+
+
+                    </ul>
+
+                </div> <!-- span12 -->
+            </div> <!-- row -->		
+        </div> <!-- list --> 
+    </div> <!-- container -->
+</div> <!-- shoppingcart-right-side -->
+

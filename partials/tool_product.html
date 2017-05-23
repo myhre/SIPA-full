@@ -1,0 +1,64 @@
+<div class="container">
+
+    <div class="row margin1">
+
+        <div class="side-menu pull-left">
+            <ul class="nav nav-pills nav-stacked margin2">
+                <li class="sideoppsett">Sideoppsett</li>
+                <li><a href="#/structure">Struktur<i class="icon-th pull-right"></i></a></li>
+                <li><a href="#/content">Innhold<i class="icon-pencil pull-right"></i></a></li>
+                <li><a href="#/style">Stil<i class="icon-tint pull-right"></i></a></li>
+                <li><a href="#/modprod">Moduler<i class="icon-wrench pull-right"></i></a></li>
+                <li class="active"><a href="#/addprod">Produkter<i class="icon-list-alt pull-right"></i></a></li>
+            </ul>
+
+        </div> <!-- side-menu -->
+
+        <div class="right-menu">
+            <form ng-upload action="../restserver/upload.php">
+            <button id="update-btn" upload-submit="newProd(contents, completed)" class="btn btn-success">Lagre endringer</button>	
+            <button id="preview-btn" class="btn btn">Forhåndsvis</button>		
+        </div> <!-- right-menu -->
+
+        <div class="span7 systemprefs">
+
+            
+
+                <h3>Velg bilde:</h3>
+                <input id="file" type="file" name="file" />
+
+
+                <h3 class="pref-text">Produktnavn:</h3>
+                <input class="title-form2" ng-model="prodname" name="prodname" id="prodname" type="text" />
+
+                <h3 class="pref-text">Produktbeskrivelse:</h3>
+                <input class="title-form2" ng-model="proddesc" name="proddesc" id="proddesc" type="text" />
+
+                <h3 class="pref-text">Pris:</h3>
+                <input class="title-form2" ng-model="price" name="price" id="price" type="number" />
+
+
+
+            </form>
+
+
+            <div><img ng-src={{uploadReport}} /></div>
+
+            <div><p id="result" class="text-success"></p></div>
+
+        </div> <!-- row -->		
+
+    </div> <!-- container 
+    
+     
+           
+           
+           <form method="POST" enctype="multipart/form-data" action="upload.php">
+                
+                <input type="file" name="file" />
+                
+                <button type="submit" name="Submit" value="Submit">Submit</button>
+                
+            </form>
+            
+    -->
